@@ -7,5 +7,7 @@ USER root
 RUN apk update \ 
   && apk add --update npm=14.15.4-r0 --repository=http://dl-cdn.alpinelinux.org/alpine/v3.13/main \
   && rm -rf /var/lib/apt/lists/*
+  
+RUN npm install -g gulp  
 
 USER jenkins
