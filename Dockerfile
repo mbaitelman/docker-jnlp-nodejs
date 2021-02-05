@@ -1,9 +1,11 @@
 ARG agent_version=4.6-1
 FROM jenkins/inbound-agent:${agent_version}-alpine
 
+# Elevate
 USER root
+# Only need to install npm, nodejs is included
 RUN apk update \ 
-  && apk add --update nodejs=14.15.4-r0 npm=14.15.4-r0 \
+  && apk add --update npm=14.15.4-r0 --repository=http://dl-cdn.alpinelinux.org/alpine/v3.13/main \
   && rm -rf /var/lib/apt/lists/*
 
 USER jenkins
