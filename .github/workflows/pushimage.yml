@@ -21,6 +21,6 @@ jobs:
           image: mbaitelman/inbound-agent-nodejs
           registry: docker.io
           buildArgs: agent_version=4.6-1, npm_version=14.15.4-r0
-          tags: latest, 4.6-1
+          tags: latest, 14.15.4-r0
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
