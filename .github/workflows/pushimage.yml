@@ -5,9 +5,6 @@ name: push docker
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
-
 jobs:
   push-latest:
     runs-on: ubuntu-20.04
