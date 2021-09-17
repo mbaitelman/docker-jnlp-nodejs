@@ -15,7 +15,7 @@ jobs:
       - uses: mr-smithers-excellent/docker-build-push@v5
         name: Build & push Docker image
         with:
-          image: mbaitelman/inbound-agent-nodejs
+          image: mbaitelman/jnlp-agent-build-tools
           registry: docker.io
           buildArgs: agent_version=4.6-1, npm_version=14.17.6-r0, grep_version=3.7-r0
           tags: "beta-${{github.run_id}}"
