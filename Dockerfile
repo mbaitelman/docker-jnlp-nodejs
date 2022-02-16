@@ -4,7 +4,7 @@ FROM jenkins/inbound-agent:${agent_version}-alpine
 # Elevate
 USER root
 #  need to install both npm and nodejs
-ARG nodejs_version=16.13.0-r0
+ARG nodejs_version=16.13.2-r1
 ARG npm_version=8.1.3-r0
 ARG grep_version=3.7-r0
 ARG aws_version=1.18.55-r0
