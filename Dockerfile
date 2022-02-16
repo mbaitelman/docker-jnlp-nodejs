@@ -12,8 +12,11 @@ ARG aws_version=1.18.55-r0
 RUN apk add --update nodejs=${nodejs_version} --repository=http://dl-cdn.alpinelinux.org/alpine/edge/main \ 
   && apk add --update npm=${npm_version} --repository=http://dl-cdn.alpinelinux.org/alpine/edge/main \
   && apk add --update grep=${grep_version} --repository=http://dl-cdn.alpinelinux.org/alpine/v3.13/main \
-  && apk add --update aws-cli=${aws_version} --repository=http://dl-cdn.alpinelinux.org/alpine/v3.13/main \
   && rm -rf /var/lib/apt/lists/*
+
+RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" \
+  && unzip awscliv2.zip \
+  && ./aws/install
   
 RUN npm install -g gulp
 
