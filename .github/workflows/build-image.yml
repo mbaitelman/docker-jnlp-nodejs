@@ -12,6 +12,9 @@ jobs:
       - uses: actions/checkout@v2
         name: Check out code
 
+      - name: verify install steps
+        run:  docker build -f Dockerfile -t beta-${{github.run_id}}-verify --target verify . 
+
       - uses: mr-smithers-excellent/docker-build-push@v5
         name: Build & push Docker image
         with:
