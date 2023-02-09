@@ -1,4 +1,4 @@
-ARG agent_version=4.6-1
+ARG agent_version=4.10-3
 
 FROM ubuntu:20.04 as sessionmanagerplugin
 
@@ -8,7 +8,7 @@ RUN apt-get update \
     && dpkg -i "session-manager-plugin.deb"
 
 
-FROM jenkins/inbound-agent:${agent_version}-alpine
+FROM jenkins/inbound-agent:${agent_version}-alpine-jdk11
 
 # Elevate
 USER root
