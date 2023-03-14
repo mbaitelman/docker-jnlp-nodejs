@@ -19,6 +19,10 @@ ARG grep_version=3.4-r0
 ARG awscli_version=2.9.15
 ARG docker_version=20.10.21-r3
 
+COPY --from=sessionmanagerplugin /usr/local/sessionmanagerplugin/bin/session-manager-plugin /usr/local/bin/
+
+RUN apk update && apk upgrade
+
 RUN apk --no-cache add -X https://dl-cdn.alpinelinux.org/alpine/v3.16/main -u alpine-keys \
   && apk --no-cache add --update nodejs=${nodejs_version} --repository=https://dl-cdn.alpinelinux.org/alpine/v3.16/main  \ 
   && apk --no-cache add --update grep=${grep_version} --repository=https://dl-cdn.alpinelinux.org/alpine/v3.12/main  \ 
