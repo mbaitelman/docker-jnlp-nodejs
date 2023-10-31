@@ -1,4 +1,4 @@
-ARG agent_version=4.10-3
+ARG agent_version=3192.v713e3b_039fb_e-1
 
 FROM ubuntu:20.04 as sessionmanagerplugin
 
@@ -13,7 +13,7 @@ FROM jenkins/inbound-agent:${agent_version}-alpine-jdk11
 # Elevate
 USER root
 #  need to install both npm and nodejs
-ARG nodejs_version=16.17.1-r0
+ARG nodejs_version=16.20.2-r0
 ARG npm_version=8.1.3-r0
 ARG grep_version=3.4-r0
 ARG awscli_version=2.9.15
