@@ -8,7 +8,7 @@ RUN apt-get update \
     && dpkg -i "session-manager-plugin.deb"
 
 
-FROM jenkins/inbound-agent:${agent_version}-alpine-jdk11
+FROM jenkins/inbound-agent:${agent_version}-alpine-jdk21
 
 # Elevate
 USER root
@@ -17,8 +17,8 @@ ARG nodejs_version=16.20.2-r0
 ARG npm_version=8.1.3-r0
 ARG grep_version=3.4-r0
 ARG awscli_version=2.13.5-r0
-ARG docker_version=23.0.6-r6
-ARG dockerbuildx_version=0.10.4-r9
+ARG docker_version=23.0.6-r7
+ARG dockerbuildx_version=0.10.4-r10
 
 COPY --from=sessionmanagerplugin /usr/local/sessionmanagerplugin/bin/session-manager-plugin /usr/local/bin/
 
